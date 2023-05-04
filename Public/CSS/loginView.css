@@ -1,0 +1,22 @@
+body{
+    background-image: url('../Imagens/bg_login_1.png');
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: fixed;
+}
+img{
+    height: 10px;
+    margin-top: 100px;
+}
+#logo img{
+    margin: 0 auto;
+    width: 60%;
+    height: 60%;
+    display: flex;
+}
+
+#formLogin{
+    max-width:  400px;
+    max-height: 400px;
+}
