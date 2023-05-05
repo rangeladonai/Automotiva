@@ -1,7 +1,7 @@
 <?php
 require_once '../Templates/header.php';
 require '../Model/connection.php';
-
+session_start();
 ?>
 <!DOCTYPE html>
 <!-- Coding by CodingLab | www.codinglabweb.com -->
@@ -23,26 +23,10 @@ require '../Model/connection.php';
     <?php include '../Templates/side-bar.php' ?>
     
     <section class="home">
-        <div class="menu_principal">CADASTRO DE ATIVIDADES</div>
+        <div class="menu_principal">CADASTRO DE MANUTENÇÃO</div>
         <Br>
     </section>
     <script>
-
-        const body = document.querySelector('body'),
-            sidebar = body.querySelector('nav'),
-            toggle = body.querySelector(".toggle"),
-            procurar = body.querySelector(".search-box"),
-            modeSwitch = body.querySelector(".toggle-switch"),
-            modeText = body.querySelector(".mode-text");
-
-        toggle.addEventListener("click", () => {
-            sidebar.classList.toggle("close");
-        })
-
-        procurar.addEventListener("click", () => {
-            sidebar.classList.remove("close");
-        })
-
         function voltarConsServico(){
             var end = '../View/consServicoView.php';
             window.location.href = end;
@@ -101,8 +85,7 @@ include_once '../Templates/header.php';
                         </div>
                         <div class="campo">
                             <label for="">Responsável</label>
-                            <input class='input' type="text" name="responsavel" placeholder="Responsável pela aula"
-                                value="<?php echo isset($_SESSION['nome']) ? $_SESSION['nome'] : ''; ?>">
+                            <input class='input' type="text" name="responsavel" disabled placeholder="Responsável pela aula"  value="<?php echo isset($_SESSION['nome']) ? $_SESSION['nome'] : ''; ?>">
                         </div>
                         <div class="campo2">
                             <div class="botoes_save">

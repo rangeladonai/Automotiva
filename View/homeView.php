@@ -83,22 +83,6 @@ include_once '../Model/connection.php';
         </style>
 
     </section>
-    <script>
-        const body = document.querySelector('body'),
-            sidebar = body.querySelector('nav'),
-            toggle = body.querySelector(".toggle"),
-            procurar = body.querySelector(".search-box"),
-            modeSwitch = body.querySelector(".toggle-switch"),
-            modeText = body.querySelector(".mode-text");
-
-        toggle.addEventListener("click", () => {
-            sidebar.classList.toggle("close");
-        })
-
-        procurar.addEventListener("click", () => {
-            sidebar.classList.remove("close");
-        })
-    </script>
 
 </body>
 

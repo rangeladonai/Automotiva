@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../Model/connection.php';
 include '../Templates/header.php';
 if (isset($_GET['cadastra'])) {
@@ -29,21 +30,6 @@ if (isset($_GET['cadastra'])) {
         <Br>
     </section>
     <script>
-        const body = document.querySelector('body'),
-            sidebar = body.querySelector('nav'),
-            toggle = body.querySelector(".toggle"),
-            procurar = body.querySelector(".search-box"),
-            modeSwitch = body.querySelector(".toggle-switch"),
-            modeText = body.querySelector(".mode-text");
-
-        toggle.addEventListener("click", () => {
-            sidebar.classList.toggle("close");
-        })
-
-        procurar.addEventListener("click", () => {
-            sidebar.classList.remove("close");
-        })
-
         //SERVICO------------------------------------------------------------------------------
 
         function deletarServico(idServico) {

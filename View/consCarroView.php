@@ -31,22 +31,6 @@ if (isset($_GET['editado'])){
         <div class="menu_principal">CONSULTAR VEÍCULOS</div>
         <Br>
     </section>
-    <script>
-        const body = document.querySelector('body'),
-            sidebar = body.querySelector('nav'),
-            toggle = body.querySelector(".toggle"),
-            procurar = body.querySelector(".search-box"),
-            modeSwitch = body.querySelector(".toggle-switch"),
-            modeText = body.querySelector(".mode-text");
-
-        toggle.addEventListener("click", () => {
-            sidebar.classList.toggle("close");
-        })
-
-        procurar.addEventListener("click", () => {
-            sidebar.classList.remove("close");
-        })
-    </script>
 
     <body>
         <div class="container" style="margin-top:160px;margin-left:299px;padding:50px;">

@@ -62,10 +62,30 @@
             <div class="bottom-content">
                 <li class="">
                     <a href="#">
-                        <i class='bx bx-log-out icon'></i>
-                        <button class="text nav-text button_logout" onclick="deslogar();return false">Logout</button>
+                        <i class='bx bx-log-out icon' onclick="deslogar();"> <span><?=$_SESSION['nome']?> </span></i>
                     </a>
                 </li>
             </div>
         </div>
     </nav>
+<script>
+    function deslogar() {
+        var end = '../View/loginView.php';
+        window.location.href = end;
+    }
+
+    const body = document.querySelector('body'),
+            sidebar = body.querySelector('nav'),
+            toggle = body.querySelector(".toggle"),
+            procurar = body.querySelector(".search-box"),
+            modeSwitch = body.querySelector(".toggle-switch"),
+            modeText = body.querySelector(".mode-text");
+
+        toggle.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        })
+
+        procurar.addEventListener("click", () => {
+            sidebar.classList.remove("close");
+        })
+</script>
