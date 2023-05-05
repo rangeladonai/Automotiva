@@ -21,12 +21,3 @@ Projeto desenvolvido em grupo no 4 Semestre do Senai.
   <li>Para parar & desfazer o container do projeto digite <i><b> docker-compose down </b></i> OU <i><b> docker compose down </b></i></li>
 </ul>
 
-ToDo:
-PIN de professor, ter acesso para cadastrar outros PINS estudantes & Professores.
-PIN estudantes não poderam deletar ou editar qualquer coisa, seja carro, motor, atividades etc..
-Apenas pins com nivel professor (is_dev = 1) poderam fazer essas ações.
-
-cadastro de pin:
-deve conter um campo para digitar o PIN que será usado manualmente
-deve conter um campo para definir o nome do resposavel daquele pin
-deve conter um select para selecionar se é Professor (ADM, permissão total) OU Estudante (acesso apenas a consultas)
