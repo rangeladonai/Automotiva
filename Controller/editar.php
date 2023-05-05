@@ -2,12 +2,12 @@
 include '../Controller/actionController.php';
 //Veiculo
 
-function editarVeiculo(){
-    $idVeiculo = $_REQUEST['idVeiculo'];
-    $modelo = $_REQUEST['modelo'];
-    $marca = $_REQUEST['marca'];
-    $cor = $_REQUEST['cor'];
-    $desc = $_REQUEST['desc'];
+function editarVeiculo($idVeiculo,$modelo,$marca,$cor,$desc){
+    $idVeiculo = $_GET['idVeiculo'];
+    $modelo = $_GET['modelo'];
+    $marca = $_GET['marca'];
+    $cor = $_GET['cor'];
+    $desc = $_GET['desc'];
 
     require '../Model/connection.php';
     $sql = "UPDATE veiculos SET modelo='$modelo', marca='$marca', cor='$cor', descricao='$desc' WHERE id_veiculo='$idVeiculo'";

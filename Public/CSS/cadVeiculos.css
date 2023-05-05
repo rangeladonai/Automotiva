@@ -1,0 +1,52 @@
+#fundo_cad {
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    height: fit-content;
+}
+
+.campo+.campo,
+.campo+.campo2 {
+    margin-top: 10px;
+}
+
+/* GLOBAL */
+/* GLOBAL */
+/* GLOBAL */
+/* GLOBAL */
+/* GLOBAL */
+
+.container-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    transition: all 0.1s linear;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.botoes_save{
+    margin-top: 13px;
+}
+
+.separacao_botao{
+    margin-left: 159px;
+}

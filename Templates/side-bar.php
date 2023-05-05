@@ -46,14 +46,14 @@
                     <li class="nav-link" title="Cadastro de Serviço">
                         <a href="cadServicoView.php">
                             <i class='bx bx-id-card icon '></i>
-                            <span class="text nav-text">Cadastro de Serviço</span>
+                            <span class="text nav-text">Manutenção</span>
                         </a>
                     </li>
 
                     <li class="nav-link" title="Consulta de Serviço">
                         <a href="consServicoView.php">
                             <i class='bx bx-search-alt-2 icon'></i>
-                            <span class="text nav-text">Consulta de Servico</span>
+                            <span class="text nav-text">Consultar Manutenção</span>
                         </a>
                     </li>
 

@@ -65,11 +65,11 @@ include_once '../Templates/header.php';
                     <div class="clearfix">
                         <div class="campo">
                             <label for="data">DATA</label>
-                            <input type="date" id="data" name="data" class="input" required >
+                            <input type="date" id="data" name="data" class="input">
                         </div>
                         <div class='campo'>
                             <label for="turno">Turno</label>
-                            <select class="input" name="turno" id="turno" required> <!--TURNO É PERIODO NO DATABASE-->
+                            <select class="input" name="turno" id="turno"> <!--TURNO É PERIODO NO DATABASE-->
                                 <option value="Matutino">Matutino</option>
                                 <option value="Vespertino">Vespertino</option>
                                 <option value="Noturno">Noturno</option>
@@ -77,13 +77,13 @@ include_once '../Templates/header.php';
                         </div>
                         <div class='campo'>
                         <label type='text' for="veiculo">Turma</label>
-                            <input type="text" name="turma" required  class='input' placeholder="Turma...">
+                            <input type="text" name="turma" class='input' placeholder="Turma...">
                         </div>
                         <div class="campo">
                                 
                             <label type='text' for="veiculo">Veículo </label>
                             <br>
-                            <select class="input " required  name="veiculo" id="veiculo" style="max-width:336px;">
+                            <select class="input "  name="veiculo" id="veiculo" style="max-width:336px;">
                                 <?php
                                 $sql = "SELECT * FROM veiculos";
                                 $query = $mysqli->query($sql);
@@ -97,11 +97,11 @@ include_once '../Templates/header.php';
                         </div>
                         <div class="campo">
                             <label for="">Atividades</label>
-                            <textarea class='input' required placeholder="Atividades realizadas..." name="descricao" id="descricao" maxlength="300" cols="300" rows="300" ></textarea>
+                            <textarea class='input' placeholder="Atividades realizadas..." name="descricao" id="descricao" maxlength="300" cols="300" rows="300" ></textarea>
                         </div>
                         <div class="campo">
                             <label for="">Responsável</label>
-                            <input class='input' type="text" name="responsavel" required placeholder="Responsável pela aula"
+                            <input class='input' type="text" name="responsavel" placeholder="Responsável pela aula"
                                 value="<?php echo isset($_SESSION['nome']) ? $_SESSION['nome'] : ''; ?>">
                         </div>
                         <div class="campo2">

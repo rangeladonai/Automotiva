@@ -117,7 +117,7 @@ if (isset($_GET['idVeiculo']) && !empty($_GET['idVeiculo'])){
                                 <button type="reset" class="btn btn-danger" onclick="voltarConsCarro()">Cancelar</button>
                                  <?php 
                                     if (isset($_SESSION['funcao']) && $_SESSION['funcao'] == "editar"){
-                                       echo '<button type="" class="btn btn-success separacao_botao" onclick="editar()" name="save">Editar</button>';
+                                       echo '<button type="submit" class="btn btn-success separacao_botao" onclick="editar()" name="save">Editar</button>';
                                     }else{
                                         echo '<button type="submit" class="btn btn-success separacao_botao" name="save">Salvar</button>';
                                     }

@@ -23,11 +23,11 @@ include_once '../Model/connection.php';
         <div class="menu_principal">MENU PRINCIPAL</div>
         <Br>
         <div class="Buttons">
-            <a class="botao_home" href="cadServicoView.php">Cadastro de Serviço</a>
+            <a class="botao_home" href="cadServicoView.php">Manutenção</a>
             <a class="botao_home" href="cadCarroView.php">Cadastro de Veiculo</a>
-            <a class="botao_home" href="cadMotorView.php">Cadastro de Motor</a>
+            <a class="botao_home" href="cadmotorView.php">Cadastro de Motor</a>
             <br>
-            <a class="botao_home" href="consServicoView.php">Consultar Serviços</a>
+            <a class="botao_home" href="consServicoView.php">Consultar Manutenção</a>
             <a class="botao_home" href="consCarroView.php">Consultar Veiculos</a>
             <a class="botao_home" href="consMotorView.php">Consultar Motores</a>
         </div>

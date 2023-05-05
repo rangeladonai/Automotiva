@@ -3,7 +3,7 @@ body{
 
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: fixed;
+    background-position:center;
 }
 img{
     height: 10px;
