@@ -16,7 +16,10 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Define a largura do modal */
-  }
+    word-break: break-all; /* Quebra a linha das palavras em qualquer ponto */
+}
+
+
   
   .close {
     color: #aaa;
