@@ -1,7 +1,7 @@
 <?php
 require_once '../Templates/header.php';
 require '../Model/connection.php';
-
+session_start();
 ?>
 <!DOCTYPE html>
 <!-- Coding by CodingLab | www.codinglabweb.com -->
@@ -23,26 +23,10 @@ require '../Model/connection.php';
     <?php include '../Templates/side-bar.php' ?>
     
     <section class="home">
-        <div class="menu_principal">CADASTRO DE ATIVIDADES</div>
+        <div class="menu_principal">CADASTRO DE MANUTENÇÃO</div>
         <Br>
     </section>
     <script>
-
-        const body = document.querySelector('body'),
-            sidebar = body.querySelector('nav'),
-            toggle = body.querySelector(".toggle"),
-            procurar = body.querySelector(".search-box"),
-            modeSwitch = body.querySelector(".toggle-switch"),
-            modeText = body.querySelector(".mode-text");
-
-        toggle.addEventListener("click", () => {
-            sidebar.classList.toggle("close");
-        })
-
-        procurar.addEventListener("click", () => {
-            sidebar.classList.remove("close");
-        })
-
         function voltarConsServico(){
             var end = '../View/consServicoView.php';
             window.location.href = end;
@@ -65,7 +49,7 @@ include_once '../Templates/header.php';
                     <div class="clearfix">
                         <div class="campo">
                             <label for="data">DATA</label>
-                            <input type="date" id="data" name="data" class="input" required >
+                            <input type="date" id="data" name="data" class="input" required>
                         </div>
                         <div class='campo'>
                             <label for="turno">Turno</label>
@@ -77,13 +61,13 @@ include_once '../Templates/header.php';
                         </div>
                         <div class='campo'>
                         <label type='text' for="veiculo">Turma</label>
-                            <input type="text" name="turma" required  class='input' placeholder="Turma...">
+                            <input type="text" name="turma" class='input' placeholder="Turma..." required>
                         </div>
                         <div class="campo">
-                                
                             <label type='text' for="veiculo">Veículo </label>
                             <br>
-                            <select class="input " required  name="veiculo" id="veiculo" style="max-width:336px;">
+                            <select class="input "  name="veiculo" id="veiculo" style="max-width:336px;" required>
+                                <option value="Nenhum*">Nenhum</option>
                                 <?php
                                 $sql = "SELECT * FROM veiculos";
                                 $query = $mysqli->query($sql);
@@ -93,17 +77,20 @@ include_once '../Templates/header.php';
                                 }
                                 ?>
                             </select>
-
+                        </div>
+                        <div class="campo">
+                                
                         </div>
                         <div class="campo">
                             <label for="">Atividades</label>
-                            <textarea class='input' required placeholder="Atividades realizadas..." name="descricao" id="descricao" maxlength="300" cols="300" rows="300" ></textarea>
+                            <textarea class='input' placeholder="Atividades realizadas..." name="descricao" id="descricao" maxlength="600" cols="600" rows="600" required ></textarea>
                         </div>
+
                         <div class="campo">
                             <label for="">Responsável</label>
-                            <input class='input' type="text" name="responsavel" required placeholder="Responsável pela aula"
-                                value="<?php echo isset($_SESSION['nome']) ? $_SESSION['nome'] : ''; ?>">
+                            <input class='input' type="text" name="responsavel" placeholder="Responsável pela aula"  value="<?php echo isset($_SESSION['nome']) ? $_SESSION['nome'] : ''; ?>" readonly>
                         </div>
+
                         <div class="campo2">
                             <div class="botoes_save">
                                 <button type="reset" class="btn btn-danger" onclick="voltarConsServico()">Cancelar</button>

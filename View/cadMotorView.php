@@ -1,8 +1,7 @@
 <?php
 require_once '../Templates/header.php';
 require '../Model/connection.php';
-
-
+session_start();
 if (isset($_GET['funcao'])){
     $_SESSION['funcao'] = $_GET['funcao'];
 }
@@ -44,20 +43,6 @@ if (isset($_GET['id_motor']) && !empty($_GET['id_motor'])){
         <Br>
     </section>
     <script>
-        const body = document.querySelector('body'),
-            sidebar = body.querySelector('nav'),
-            toggle = body.querySelector(".toggle"),
-            procurar = body.querySelector(".search-box"),
-            modeSwitch = body.querySelector(".toggle-switch"),
-            modeText = body.querySelector(".mode-text");
-
-        toggle.addEventListener("click", () => {
-            sidebar.classList.toggle("close");
-        })
-
-        procurar.addEventListener("click", () => {
-            sidebar.classList.remove("close");
-        })
 
         function editar(idMotor) {
             //debugger

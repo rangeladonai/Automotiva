@@ -1,6 +1,5 @@
 <nav class="sidebar close">
         <header>
-
             <div>
                 <a href="homeView.php">
                     <button class="text_senai">
@@ -8,8 +7,6 @@
                     </button>
                 </a>
             </div>
-
-            <i class='bx bx-chevron-right toggle'></i>
         </header>
         <div class="menu-bar">
             <div class="menu">
@@ -46,26 +43,56 @@
                     <li class="nav-link" title="Cadastro de Serviço">
                         <a href="cadServicoView.php">
                             <i class='bx bx-id-card icon '></i>
-                            <span class="text nav-text">Cadastro de Serviço</span>
+                            <span class="text nav-text">Manutenção</span>
                         </a>
                     </li>
 
                     <li class="nav-link" title="Consulta de Serviço">
                         <a href="consServicoView.php">
                             <i class='bx bx-search-alt-2 icon'></i>
-                            <span class="text nav-text">Consulta de Servico</span>
+                            <span class="text nav-text">Consultar Manutenção</span>
                         </a>
                     </li>
+
+                    <?php if(isset($_SESSION['is_dev']) && $_SESSION['is_dev'] != 0): ?>    
+                    <li class="nav-link" title="Cadastro Acesso">
+                        <a href="consAcessoView.php">
+                            <i class='fas fa-key' style='color: red'></i>
+                            <span class="text nav-text">Acessos</span>
+                        </a>
+                    </li>
+                    <?php endif; ?>
 
                 </ul>
             </div>
             <div class="bottom-content">
                 <li class="">
                     <a href="#">
-                        <i class='bx bx-log-out icon'></i>
-                        <button class="text nav-text button_logout" onclick="deslogar();return false">Logout</button>
+                        <i class='bx bx-log-out icon' onclick="deslogar();"></i>
                     </a>
                 </li>
             </div>
         </div>
     </nav>
+<script>
+    function deslogar() {
+        var end = '../View/loginView.php';
+        window.location.href = end;
+    }
+    var session = document.getElementById('sessionNome');
+    const body = document.querySelector('body');
+    const sidebar = body.querySelector('nav');
+    const toggle = body.querySelector(".toggle");
+    const procurar = body.querySelector(".search-box");
+    const modeSwitch = body.querySelector(".toggle-switch");
+    const modeText = body.querySelector(".mode-text");
+
+    sidebar.addEventListener("mouseenter", () => {
+        sidebar.classList.remove("close");
+    });
+
+    sidebar.addEventListener("mouseleave", () => {
+        sidebar.classList.add("close");
+    });
+
+</script>

@@ -1,7 +1,7 @@
 <?php
 require_once '../Templates/header.php';
 require '../Model/connection.php';
-
+session_start();
 if (isset($_GET['funcao'])){
     $_SESSION['funcao'] = $_GET['funcao'];
 }
@@ -50,21 +50,6 @@ if (isset($_GET['idVeiculo']) && !empty($_GET['idVeiculo'])){
         <Br>
     </section>
     <script>
-
-        const body = document.querySelector('body'),
-            sidebar = body.querySelector('nav'),
-            toggle = body.querySelector(".toggle"),
-            procurar = body.querySelector(".search-box"),
-            modeSwitch = body.querySelector(".toggle-switch"),
-            modeText = body.querySelector(".mode-text");
-
-        toggle.addEventListener("click", () => {
-            sidebar.classList.toggle("close");
-        })
-
-        procurar.addEventListener("click", () => {
-            sidebar.classList.remove("close");
-        })
 
         function editar(){
             var form = document.getElementById("main-container");
@@ -117,7 +102,7 @@ if (isset($_GET['idVeiculo']) && !empty($_GET['idVeiculo'])){
                                 <button type="reset" class="btn btn-danger" onclick="voltarConsCarro()">Cancelar</button>
                                  <?php 
                                     if (isset($_SESSION['funcao']) && $_SESSION['funcao'] == "editar"){
-                                       echo '<button type="" class="btn btn-success separacao_botao" onclick="editar()" name="save">Editar</button>';
+                                       echo '<button type="submit" class="btn btn-success separacao_botao" onclick="editar()" name="save">Editar</button>';
                                     }else{
                                         echo '<button type="submit" class="btn btn-success separacao_botao" name="save">Salvar</button>';
                                     }

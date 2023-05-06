@@ -30,22 +30,6 @@ if (isset($_GET['editado'])){
         <div class="menu_principal">CONSULTAR MOTORES</div>
         <Br>
     </section>
-    <script>
-        const body = document.querySelector('body'),
-            sidebar = body.querySelector('nav'),
-            toggle = body.querySelector(".toggle"),
-            procurar = body.querySelector(".search-box"),
-            modeSwitch = body.querySelector(".toggle-switch"),
-            modeText = body.querySelector(".mode-text");
-
-        toggle.addEventListener("click", () => {
-            sidebar.classList.toggle("close");
-        })
-
-        procurar.addEventListener("click", () => {
-            sidebar.classList.remove("close");
-        })
-    </script>
 
     <body>
         <div class="container" style="margin-top:160px;margin-left:299px;padding:50px;">
@@ -69,10 +53,14 @@ if (isset($_GET['editado'])){
                             . '<td scope="row">' . $row['numeracao_motor'] . '</td>'
                             . '<td scope="row">' . $row['descricao_motor'] . '</td>'
                             . '<td scope="row">' . $row['base'] . '</td>'
-                            . '<td> '
-                            . '<a class="bx bx-edit" onclick="editarMotor('.$row['id_motor'].',\''.$row["numeracao_motor"].'\',\''.$row["descricao_motor"].'\',\''.$row["base"].'\')"></a>'                            
-                            . '<a class="bx bx-trash-alt" style="padding: 12px;" onclick="deletarMotor(' . $row["id_motor"] . ')"></a>'
-                            . '</td>'
+                            . '<td>';
+
+                            if ($_SESSION['is_dev'] != 0):
+                            echo '<a class="bx bx-edit" onclick="editarMotor('.$row['id_motor'].',\''.$row["numeracao_motor"].'\',\''.$row["descricao_motor"].'\',\''.$row["base"].'\')"></a>'                            
+                            . '<a class="bx bx-trash-alt" style="padding: 12px;" onclick="deletarMotor(' . $row["id_motor"] . ')"></a>';
+                            endif;
+
+                            echo '</td>'
 
                             . '</tr>';
                     }

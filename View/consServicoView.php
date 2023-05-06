@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../Model/connection.php';
 include '../Templates/header.php';
 if (isset($_GET['cadastra'])) {
@@ -29,21 +30,6 @@ if (isset($_GET['cadastra'])) {
         <Br>
     </section>
     <script>
-        const body = document.querySelector('body'),
-            sidebar = body.querySelector('nav'),
-            toggle = body.querySelector(".toggle"),
-            procurar = body.querySelector(".search-box"),
-            modeSwitch = body.querySelector(".toggle-switch"),
-            modeText = body.querySelector(".mode-text");
-
-        toggle.addEventListener("click", () => {
-            sidebar.classList.toggle("close");
-        })
-
-        procurar.addEventListener("click", () => {
-            sidebar.classList.remove("close");
-        })
-
         //SERVICO------------------------------------------------------------------------------
 
         function deletarServico(idServico) {
@@ -122,9 +108,13 @@ if (isset($_GET['cadastra'])) {
                                 . '<td scope="">' . $row['veiculo'] . '</td>'
                                 . '<td>' . '<button class="btn btn-secondary" onclick="openModalDescricao(\'' . $row['descricao_atividade'] . '\')">Abrir Descrição</button>' . '</td>'
                                 . '<td scope="">' . $row['responsavel'] . '</td>'
-                                . '<td> '
-                                . '<a class="bx bx-trash-alt" style="padding: 5px;" onclick="deletarServico(' . $row["id_os"] . ')"></a>'
-                                . '</td>'
+                                . '<td>';
+
+                                if($_SESSION['is_dev'] != 0){
+                                    echo '<a class="bx bx-trash-alt" style="padding: 5px;" onclick="deletarServico(' . $row["id_os"] . ')"></a>';
+                                }
+                                
+                                echo '</td>'
                                 . '</tr>';
                         }
                         ?>

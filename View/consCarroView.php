@@ -31,22 +31,6 @@ if (isset($_GET['editado'])){
         <div class="menu_principal">CONSULTAR VEÍCULOS</div>
         <Br>
     </section>
-    <script>
-        const body = document.querySelector('body'),
-            sidebar = body.querySelector('nav'),
-            toggle = body.querySelector(".toggle"),
-            procurar = body.querySelector(".search-box"),
-            modeSwitch = body.querySelector(".toggle-switch"),
-            modeText = body.querySelector(".mode-text");
-
-        toggle.addEventListener("click", () => {
-            sidebar.classList.toggle("close");
-        })
-
-        procurar.addEventListener("click", () => {
-            sidebar.classList.remove("close");
-        })
-    </script>
 
     <body>
         <div class="container" style="margin-top:160px;margin-left:299px;padding:50px;">
@@ -71,11 +55,14 @@ if (isset($_GET['editado'])){
                             . '<td scope="row">' . $row['modelo'] . '</td>'
                             . '<td scope="row">' . $row['cor'] . '</td>'
                             . '<td scope="row">' . $row['descricao'] . '</td>'
-                            . '<td> '
-                            . '<a class="bx bx-edit" onclick="editarVeiculo('.$row['id_veiculo'].',\''.$row["marca"].'\',\''.$row["modelo"].'\',\''.$row["cor"].'\',\''.$row["descricao"].'\')"></a>'
-                            . '<a class="bx bx-trash-alt" style="padding: 12px;" onclick="deletarVeiculo('.$row["id_veiculo"].')"></a>'
-                            .'</td>'
-
+                            . '<td> ';
+                            
+                            if ($_SESSION['is_dev'] != 0):
+                            echo '<a class="bx bx-edit" onclick="editarVeiculo('.$row['id_veiculo'].',\''.$row["marca"].'\',\''.$row["modelo"].'\',\''.$row["cor"].'\',\''.$row["descricao"].'\')"></a>'
+                            . '<a class="bx bx-trash-alt" style="padding: 12px;" onclick="deletarVeiculo('.$row["id_veiculo"].')"></a>';
+                            endif;
+                            
+                            echo '</td>'
                             . '</tr>';
                     }
                     ?>

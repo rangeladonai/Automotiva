@@ -7,7 +7,7 @@ $psswrd = 'Radajori2023-';
 */
 
 
-//LOGIN PARA XAMPP
+
 $host = 'localhost';
 $dbname = 'radajori';
 $username = 'root';
@@ -18,8 +18,9 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     exit();
 }else{
-   echo 'conectado';
+//    echo 'conectado';
 }
+
 
 
 
