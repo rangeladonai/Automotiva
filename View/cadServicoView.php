@@ -49,11 +49,11 @@ include_once '../Templates/header.php';
                     <div class="clearfix">
                         <div class="campo">
                             <label for="data">DATA</label>
-                            <input type="date" id="data" name="data" class="input">
+                            <input type="date" id="data" name="data" class="input" required>
                         </div>
                         <div class='campo'>
                             <label for="turno">Turno</label>
-                            <select class="input" name="turno" id="turno"> <!--TURNO É PERIODO NO DATABASE-->
+                            <select class="input" name="turno" id="turno" required> <!--TURNO É PERIODO NO DATABASE-->
                                 <option value="Matutino">Matutino</option>
                                 <option value="Vespertino">Vespertino</option>
                                 <option value="Noturno">Noturno</option>
@@ -61,12 +61,12 @@ include_once '../Templates/header.php';
                         </div>
                         <div class='campo'>
                         <label type='text' for="veiculo">Turma</label>
-                            <input type="text" name="turma" class='input' placeholder="Turma...">
+                            <input type="text" name="turma" class='input' placeholder="Turma..." required>
                         </div>
                         <div class="campo">
                             <label type='text' for="veiculo">Veículo </label>
                             <br>
-                            <select class="input "  name="veiculo" id="veiculo" style="max-width:336px;">
+                            <select class="input "  name="veiculo" id="veiculo" style="max-width:336px;" required>
                                 <option value="Nenhum*">Nenhum</option>
                                 <?php
                                 $sql = "SELECT * FROM veiculos";
@@ -83,7 +83,7 @@ include_once '../Templates/header.php';
                         </div>
                         <div class="campo">
                             <label for="">Atividades</label>
-                            <textarea class='input' placeholder="Atividades realizadas..." name="descricao" id="descricao" maxlength="600" cols="600" rows="600" ></textarea>
+                            <textarea class='input' placeholder="Atividades realizadas..." name="descricao" id="descricao" maxlength="600" cols="600" rows="600" required ></textarea>
                         </div>
 
                         <div class="campo">
