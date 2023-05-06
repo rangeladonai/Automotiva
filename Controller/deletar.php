@@ -1,4 +1,5 @@
 <?php
+include '../Controller/actionController.php';
             //Veiculo
 if (isset($_GET['idVeiculo'])){
     deletarVeiculo($_GET['idVeiculo']);
@@ -47,5 +48,17 @@ function deletarServico($idServico){
         header('Location:../View/consServicoView.php');
     }catch(Exception $e){
         echo $e->getCode();
+    }
+}
+
+function deleteAcesso(){
+    require '../Model/connection.php';
+    $id_userpin = $_GET['id_userpin'];
+    $sql = "DELETE FROM usuariopin WHERE id_userpin = '$id_userpin'";
+    try{
+        $mysqli->query($sql);
+        header('Location:../View/consAcessoView.php');
+    }catch(Exception $e){
+        $e->getMessage();
     }
 }

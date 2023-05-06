@@ -55,11 +55,14 @@ if (isset($_GET['editado'])){
                             . '<td scope="row">' . $row['modelo'] . '</td>'
                             . '<td scope="row">' . $row['cor'] . '</td>'
                             . '<td scope="row">' . $row['descricao'] . '</td>'
-                            . '<td> '
-                            . '<a class="bx bx-edit" onclick="editarVeiculo('.$row['id_veiculo'].',\''.$row["marca"].'\',\''.$row["modelo"].'\',\''.$row["cor"].'\',\''.$row["descricao"].'\')"></a>'
-                            . '<a class="bx bx-trash-alt" style="padding: 12px;" onclick="deletarVeiculo('.$row["id_veiculo"].')"></a>'
-                            .'</td>'
-
+                            . '<td> ';
+                            
+                            if ($_SESSION['is_dev'] != 0):
+                            echo '<a class="bx bx-edit" onclick="editarVeiculo('.$row['id_veiculo'].',\''.$row["marca"].'\',\''.$row["modelo"].'\',\''.$row["cor"].'\',\''.$row["descricao"].'\')"></a>'
+                            . '<a class="bx bx-trash-alt" style="padding: 12px;" onclick="deletarVeiculo('.$row["id_veiculo"].')"></a>';
+                            endif;
+                            
+                            echo '</td>'
                             . '</tr>';
                     }
                     ?>

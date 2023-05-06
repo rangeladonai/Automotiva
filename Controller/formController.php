@@ -11,9 +11,7 @@ function validaLogin(){
         if($num_rows){
             $row = mysqli_fetch_assoc($query);
             $_SESSION['nome'] = $row['nome'];
-            if($row['is_dev'] != 0){
-                $_SESSION['is_dev'] = $row['is_dev'];
-            }
+            $_SESSION['is_dev'] = $row['is_dev'];
             if ($row['pin'] == $pin){
                 header('Location:../View/homeView.php');
             }
@@ -49,4 +47,20 @@ function cadServico() {
     $sql = "INSERT INTO ordem_servico(data_os, periodo, turma, veiculo, descricao_atividade, responsavel, status_os) VALUES('$data', '$turno', '$turma', '$veiculoDado','$descricao' ,'$resp', 0)";
     $mysqli->query($sql);
     header('Location:../View/consServicoView.php');
+}
+
+function cadAcesso(){
+    require '../Model/connection.php';
+    $nome = $_POST['nome'];
+    $pin = $_POST['pinacesso'];
+    $isdev = $_POST['acesso'];
+    var_dump($_POST);
+    $sql = "INSERT INTO usuariopin(nome,pin,is_dev) VALUES('$nome','$pin','$isdev')";
+    
+    try{
+        $mysqli->query($sql);
+        header('Location:../View/consAcessoView.php');
+    } catch(Exception $e){
+        echo $e->getMessage();
+    }
 }

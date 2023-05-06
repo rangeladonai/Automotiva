@@ -108,9 +108,13 @@ if (isset($_GET['cadastra'])) {
                                 . '<td scope="">' . $row['veiculo'] . '</td>'
                                 . '<td>' . '<button class="btn btn-secondary" onclick="openModalDescricao(\'' . $row['descricao_atividade'] . '\')">Abrir Descrição</button>' . '</td>'
                                 . '<td scope="">' . $row['responsavel'] . '</td>'
-                                . '<td> '
-                                . '<a class="bx bx-trash-alt" style="padding: 5px;" onclick="deletarServico(' . $row["id_os"] . ')"></a>'
-                                . '</td>'
+                                . '<td>';
+
+                                if($_SESSION['is_dev'] != 0){
+                                    echo '<a class="bx bx-trash-alt" style="padding: 5px;" onclick="deletarServico(' . $row["id_os"] . ')"></a>';
+                                }
+                                
+                                echo '</td>'
                                 . '</tr>';
                         }
                         ?>

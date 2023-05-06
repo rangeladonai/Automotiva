@@ -53,10 +53,14 @@ if (isset($_GET['editado'])){
                             . '<td scope="row">' . $row['numeracao_motor'] . '</td>'
                             . '<td scope="row">' . $row['descricao_motor'] . '</td>'
                             . '<td scope="row">' . $row['base'] . '</td>'
-                            . '<td> '
-                            . '<a class="bx bx-edit" onclick="editarMotor('.$row['id_motor'].',\''.$row["numeracao_motor"].'\',\''.$row["descricao_motor"].'\',\''.$row["base"].'\')"></a>'                            
-                            . '<a class="bx bx-trash-alt" style="padding: 12px;" onclick="deletarMotor(' . $row["id_motor"] . ')"></a>'
-                            . '</td>'
+                            . '<td>';
+
+                            if ($_SESSION['is_dev'] != 0):
+                            echo '<a class="bx bx-edit" onclick="editarMotor('.$row['id_motor'].',\''.$row["numeracao_motor"].'\',\''.$row["descricao_motor"].'\',\''.$row["base"].'\')"></a>'                            
+                            . '<a class="bx bx-trash-alt" style="padding: 12px;" onclick="deletarMotor(' . $row["id_motor"] . ')"></a>';
+                            endif;
+
+                            echo '</td>'
 
                             . '</tr>';
                     }

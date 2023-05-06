@@ -42,3 +42,16 @@ function editarMotor(id_motor,numeracao_motor,descricao_motor,base){
     
     window.location.href = end;
 }
+
+function cadPin(){
+    var end = '../View/cadAcessoView.php';
+    window.location.href = end;
+}
+
+function deletarPin(id_userpin){
+    var box = confirm('DESEJA DELETAR O ACESSO: ' + id_userpin + '? ESTA AÇÃO NÃO PODERÁ SER DESFEITA');
+    if (box){
+        var end = '../Controller/deletar.php?action=deleteAcesso' + '&&id_userpin=' + id_userpin;
+        window.location.href = end;
+    }
+}

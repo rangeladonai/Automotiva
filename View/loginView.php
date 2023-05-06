@@ -1,4 +1,5 @@
-<?php 
+<?php
+session_start();
 require_once '../Templates/header.php';
 unset($_SESSION['nome']);
 unset($_SESSION['is_dev']);

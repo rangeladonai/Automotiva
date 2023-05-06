@@ -9,7 +9,6 @@
                 </a>
             </div>
 
-            <i class='bx bx-chevron-right toggle'></i>
         </header>
         <div class="menu-bar">
             <div class="menu">
@@ -57,6 +56,15 @@
                         </a>
                     </li>
 
+                    <?php if(isset($_SESSION['is_dev']) && $_SESSION['is_dev'] != 0): ?>    
+                    <li class="nav-link" title="Cadastro Acesso">
+                        <a href="consAcessoView.php">
+                            <i class='fas fa-key' style='color: red'></i>
+                            <span class="text nav-text">Acessos</span>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+
                 </ul>
             </div>
             <div class="bottom-content">
@@ -74,18 +82,19 @@
         window.location.href = end;
     }
 
-    const body = document.querySelector('body'),
-            sidebar = body.querySelector('nav'),
-            toggle = body.querySelector(".toggle"),
-            procurar = body.querySelector(".search-box"),
-            modeSwitch = body.querySelector(".toggle-switch"),
-            modeText = body.querySelector(".mode-text");
+    const body = document.querySelector('body');
+    const sidebar = body.querySelector('nav');
+    const toggle = body.querySelector(".toggle");
+    const procurar = body.querySelector(".search-box");
+    const modeSwitch = body.querySelector(".toggle-switch");
+    const modeText = body.querySelector(".mode-text");
 
-        toggle.addEventListener("click", () => {
-            sidebar.classList.toggle("close");
-        })
+    sidebar.addEventListener("mouseenter", () => {
+    sidebar.classList.remove("close");
+    });
 
-        procurar.addEventListener("click", () => {
-            sidebar.classList.remove("close");
-        })
+    sidebar.addEventListener("mouseleave", () => {
+    sidebar.classList.add("close");
+    });
+
 </script>
