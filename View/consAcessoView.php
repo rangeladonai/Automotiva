@@ -35,7 +35,7 @@ if (isset($_GET['editado'])){
     <body>
         <div class="container" style="margin-top:160px;margin-left:299px;padding:50px;">
             <table class="table">
-                <button class="btn btn-success" onclick="cadPin();" style="float: right;">+</button>
+                <button class="btn btn-success" onclick="cadPin();" style="float: right;">Adicionar</button>
                 <br><br>
                 <tr>
                     <th scope="col">#</th>
@@ -50,19 +50,21 @@ if (isset($_GET['editado'])){
                 $sql = "SELECT * FROM usuariopin ORDER BY id_userpin";
                 $query = $mysqli->query($sql);
                 while ($row = mysqli_fetch_assoc($query)) {
-                    echo '<tr>'
-                        . '<td scope="row">' . $row['id_userpin'] . '</td>'
-                        . '<td scope="row">' . '<span id="pin-'.$row['id_userpin'].'" data-pin="'.$row['pin'].'">********</span> <a href="#" onclick="mostrarOcultar('.$row['id_userpin'].');"><i id="eye-'.$row['id_userpin'].'" class="fa-solid fa-eye"></i></a></td>'
-                        . '<td scope="row">' . $row['nome'] . '</td>';
-                        if ($row['is_dev'] != 0){
-                            echo '<td scope="row"> Total </td>';
-                        } else {
-                            echo '<td scope="row"> Restrito </td>';
-                        }
-                        echo '<td> '
-                        . '<a class="bx bx-trash-alt" style="padding: 12px;" onclick="deletarPin('.$row["id_userpin"].')"></a>'
-                        .'</td>'
-                        . '</tr>';
+                    if ($row['id_userpin'] != 1){
+                        echo '<tr>'
+                            . '<td scope="row">' . $row['id_userpin'] . '</td>'
+                            . '<td scope="row">' . '<span id="pin-'.$row['id_userpin'].'" data-pin="'.$row['pin'].'">********</span> <a href="#" onclick="mostrarOcultar('.$row['id_userpin'].');"><i id="eye-'.$row['id_userpin'].'" class="fa-solid fa-eye"></i></a></td>'
+                            . '<td scope="row">' . $row['nome'] . '</td>';
+                            if ($row['is_dev'] != 0){
+                                echo '<td scope="row"> Total </td>';
+                            } else {
+                                echo '<td scope="row"> Restrito </td>';
+                            }
+                            echo '<td> '
+                            . '<a class="bx bx-trash-alt" style="padding: 12px;" onclick="deletarPin('.$row["id_userpin"].')"></a>'
+                            . '</td>'
+                            . '</tr>';
+                    }
                 }
                 ?>
             </table>

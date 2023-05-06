@@ -1,6 +1,5 @@
 <nav class="sidebar close">
         <header>
-
             <div>
                 <a href="homeView.php">
                     <button class="text_senai">
@@ -8,7 +7,6 @@
                     </button>
                 </a>
             </div>
-
         </header>
         <div class="menu-bar">
             <div class="menu">
@@ -70,7 +68,7 @@
             <div class="bottom-content">
                 <li class="">
                     <a href="#">
-                        <i class='bx bx-log-out icon' onclick="deslogar();"> <span><?=$_SESSION['nome']?> </span></i>
+                        <i class='bx bx-log-out icon' onclick="deslogar();"></i>
                     </a>
                 </li>
             </div>
@@ -81,7 +79,7 @@
         var end = '../View/loginView.php';
         window.location.href = end;
     }
-
+    var session = document.getElementById('sessionNome');
     const body = document.querySelector('body');
     const sidebar = body.querySelector('nav');
     const toggle = body.querySelector(".toggle");
@@ -90,11 +88,11 @@
     const modeText = body.querySelector(".mode-text");
 
     sidebar.addEventListener("mouseenter", () => {
-    sidebar.classList.remove("close");
+        sidebar.classList.remove("close");
     });
 
     sidebar.addEventListener("mouseleave", () => {
-    sidebar.classList.add("close");
+        sidebar.classList.add("close");
     });
 
 </script>

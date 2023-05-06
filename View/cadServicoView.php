@@ -64,10 +64,10 @@ include_once '../Templates/header.php';
                             <input type="text" name="turma" class='input' placeholder="Turma...">
                         </div>
                         <div class="campo">
-                                
                             <label type='text' for="veiculo">Veículo </label>
                             <br>
                             <select class="input "  name="veiculo" id="veiculo" style="max-width:336px;">
+                                <option value="Nenhum*">Nenhum</option>
                                 <?php
                                 $sql = "SELECT * FROM veiculos";
                                 $query = $mysqli->query($sql);
@@ -77,7 +77,9 @@ include_once '../Templates/header.php';
                                 }
                                 ?>
                             </select>
-
+                        </div>
+                        <div class="campo">
+                                
                         </div>
                         <div class="campo">
                             <label for="">Atividades</label>
