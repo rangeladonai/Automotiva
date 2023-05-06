@@ -81,7 +81,7 @@ include_once '../Templates/header.php';
                         </div>
                         <div class="campo">
                             <label for="">Atividades</label>
-                            <textarea class='input' placeholder="Atividades realizadas..." name="descricao" id="descricao" maxlength="300" cols="300" rows="300" ></textarea>
+                            <textarea class='input' placeholder="Atividades realizadas..." name="descricao" id="descricao" maxlength="600" cols="600" rows="600" ></textarea>
                         </div>
                         <div class="campo">
                             <label for="">Responsável</label>
