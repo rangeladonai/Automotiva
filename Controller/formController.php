@@ -41,7 +41,6 @@ function cadServico() {
     $veiculo = $_POST['veiculo'];
     $descricao = $_POST['descricao'];
     $resp = $_POST['responsavel'];
-
     require '../Model/connection.php';
     $veiculoDado = procuraVeiculo($veiculo);
     $sql = "INSERT INTO ordem_servico(data_os, periodo, turma, veiculo, descricao_atividade, responsavel, status_os) VALUES('$data', '$turno', '$turma', '$veiculoDado','$descricao' ,'$resp', 0)";

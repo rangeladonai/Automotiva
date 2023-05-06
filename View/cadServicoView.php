@@ -85,10 +85,12 @@ include_once '../Templates/header.php';
                             <label for="">Atividades</label>
                             <textarea class='input' placeholder="Atividades realizadas..." name="descricao" id="descricao" maxlength="600" cols="600" rows="600" ></textarea>
                         </div>
+
                         <div class="campo">
                             <label for="">Responsável</label>
-                            <input class='input' type="text" name="responsavel" disabled placeholder="Responsável pela aula"  value="<?php echo isset($_SESSION['nome']) ? $_SESSION['nome'] : ''; ?>">
+                            <input class='input' type="text" name="responsavel" placeholder="Responsável pela aula"  value="<?php echo isset($_SESSION['nome']) ? $_SESSION['nome'] : ''; ?>" readonly>
                         </div>
+
                         <div class="campo2">
                             <div class="botoes_save">
                                 <button type="reset" class="btn btn-danger" onclick="voltarConsServico()">Cancelar</button>
