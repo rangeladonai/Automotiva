@@ -40,14 +40,14 @@
                     </li>
 
 
-                    <li class="nav-link" title="Cadastro de Serviço">
+                    <li class="nav-link" title="Cadastro de Manutenção">
                         <a href="cadServicoView.php">
                             <i class='bx bx-id-card icon '></i>
                             <span class="text nav-text">Manutenção</span>
                         </a>
                     </li>
 
-                    <li class="nav-link" title="Consulta de Serviço">
+                    <li class="nav-link" title="Consulta de Manutenção">
                         <a href="consServicoView.php">
                             <i class='bx bx-search-alt-2 icon'></i>
                             <span class="text nav-text">Consultar Manutenção</span>

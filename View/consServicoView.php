@@ -83,6 +83,7 @@ if (isset($_GET['cadastra'])) {
                     <th scope="">TURNO</th>
                     <th scope="">TURMA</th>
                     <th scope="">VEÍCULO</th>
+                    <th scope="">MOTOR</th>
                     <th scope="">DESCRIÇÃO</th>
                     <th scope="">RESPONSÁVEL</th>
                 </tr>
@@ -106,6 +107,7 @@ if (isset($_GET['cadastra'])) {
                                 . '<td scope="">' . $row['periodo'] . '</td>'
                                 . '<td scope="">' . $row['turma'] . '</td>'
                                 . '<td scope="">' . $row['veiculo'] . '</td>'
+                                . '<td scope="">' . $row['motor'] . '</td>'
                                 . '<td>' . '<button class="btn btn-secondary" onclick="openModalDescricao(\'' . $row['descricao_atividade'] . '\')">Abrir Descrição</button>' . '</td>'
                                 . '<td scope="">' . $row['responsavel'] . '</td>'
                                 . '<td>';
