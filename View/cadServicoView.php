@@ -72,14 +72,23 @@ include_once '../Templates/header.php';
                                 $sql = "SELECT * FROM veiculos";
                                 $query = $mysqli->query($sql);
                                 while ($row = mysqli_fetch_assoc($query)) {
-                                    echo $row;
                                     echo '<option value="' . $row['id_veiculo'] . '">' . $row['marca'] . ' ' . $row['modelo'] . " - " . $row['cor'] . " (" . $row['descricao'] . ")" . "</option>";
                                 }
                                 ?>
                             </select>
                         </div>
                         <div class="campo">
-                                
+                              <label for="">Motor</label>
+                              <select name="motor" id="motor" class="input " style="max-width:336px;" required>
+                              <option value="Nenhum*">Nenhum</option>
+                              <?php
+                                $sql = "SELECT * FROM motor";
+                                $query = $mysqli->query($sql);
+                                while ($row = mysqli_fetch_assoc($query)){
+                                    echo '<option value="' . $row['numeracao_motor'] . ' - ' . $row['descricao_motor']  . ' (' . $row['base'] . ')'.'">'. $row['numeracao_motor'] . ' - ' . $row['descricao_motor']  . ' (' . $row['base'] . ')'.'</option>';
+                                }
+                              ?>
+                              </select>
                         </div>
                         <div class="campo">
                             <label for="">Atividades</label>

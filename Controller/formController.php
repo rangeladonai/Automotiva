@@ -39,11 +39,12 @@ function cadServico() {
     $turno = $_POST['turno'];
     $turma = $_POST['turma'];
     $veiculo = $_POST['veiculo'];
+    $motor = $_POST['motor'];
     $descricao = $_POST['descricao'];
     $resp = $_POST['responsavel'];
     require '../Model/connection.php';
     $veiculoDado = procuraVeiculo($veiculo);
-    $sql = "INSERT INTO ordem_servico(data_os, periodo, turma, veiculo, descricao_atividade, responsavel, status_os) VALUES('$data', '$turno', '$turma', '$veiculoDado','$descricao' ,'$resp', 0)";
+    $sql = "INSERT INTO ordem_servico(data_os, periodo, turma, veiculo, descricao_atividade, responsavel, motor) VALUES('$data', '$turno', '$turma', '$veiculoDado','$descricao' ,'$resp', '$motor')";
     $mysqli->query($sql);
     header('Location:../View/consServicoView.php');
 }

@@ -19,7 +19,7 @@ CREATE TABLE `motor` (
 CREATE TABLE `ordem_servico` (
   `id_os` int(11) NOT NULL,
   `descricao_atividade` varchar(255) NOT NULL,
-  `status_os` varchar(50) NOT NULL,
+  `motor` varchar(100) NOT NULL,
   `data_os` date NOT NULL,
   `periodo` varchar(100) NOT NULL,
   `turma` varchar(100) NOT NULL,
