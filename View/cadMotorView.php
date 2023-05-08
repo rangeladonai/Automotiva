@@ -2,6 +2,7 @@
 session_start();
 require_once '../Templates/header.php';
 require '../Model/connection.php';
+
 if (isset($_GET['funcao'])){
     $_SESSION['funcao'] = $_GET['funcao'];
 }
