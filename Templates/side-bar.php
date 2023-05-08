@@ -57,7 +57,7 @@
                     <?php if(isset($_SESSION['is_dev']) && $_SESSION['is_dev'] != 0): ?>    
                     <li class="nav-link" title="Cadastro Acesso">
                         <a href="consAcessoView.php">
-                            <i class='fas fa-key' style='color: red'></i>
+                            <i class='fas fa-key' style='color: red; position:relative; left:20px;';></i>
                             <span class="text nav-text">Acessos</span>
                         </a>
                     </li>
