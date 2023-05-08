@@ -1,4 +1,5 @@
 <?php
+    session_start();
     class motor{
 
         protected      $numeracao_motor;
