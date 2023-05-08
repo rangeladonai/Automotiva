@@ -58,7 +58,7 @@
                     <li class="nav-link" title="Cadastro Acesso">
                         <a href="consAcessoView.php">
                             <i class='fas fa-key' style='color: red; position:relative; left:20px;';></i>
-                            <span class="text nav-text">Acessos</span>
+                            <span class="text nav-text" style="position:relative; left: 42px;">Acessos</span>
                         </a>
                     </li>
                     <?php endif; ?>
