@@ -2,11 +2,11 @@
 require_once '../Templates/header.php';
 require '../Model/connection.php';
 session_start();
-if (isset($_GET['funcao'])){
+
+if(isset($_GET['funcao']) && $_GET['funcao'] == 'editar'){
     $_SESSION['funcao'] = $_GET['funcao'];
-}
-if (isset($_GET['idVeiculo']) && !empty($_GET['idVeiculo'])){
-    $_SESSION['idVeiculo'] = $_GET['idVeiculo'];
+} else {
+    unset($_SESSION['funcao']);
 }
 ?>
 <!DOCTYPE html>
@@ -20,15 +20,9 @@ if (isset($_GET['idVeiculo']) && !empty($_GET['idVeiculo'])){
     <!-- estilo que vem do index.css -->
     <link rel="stylesheet" href="../Public/CSS/estiloHome.css">
     <link rel="stylesheet" href="../Public/CSS/cadVeiculos.css">
-
     <link rel="stylesheet" href="../Public/CSS/estiloCarro.css">
-
-    
-	
 	<link rel="icon" href="../Public/Imagens/senai_logo.png" type="image/icon type">
-    
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    
     <link rel="icon" href="../Public/Imagens/senai_logo.png" type="image/icon type">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -44,8 +38,7 @@ if (isset($_GET['idVeiculo']) && !empty($_GET['idVeiculo'])){
             } else {
                 echo 'CADASTRO DE VEÍCULOS';
             }
-        ?>    
-
+        ?>
         </div>
         <Br>
     </section>
@@ -53,17 +46,20 @@ if (isset($_GET['idVeiculo']) && !empty($_GET['idVeiculo'])){
 
         function editar(){
             var form = document.getElementById("main-container");
-            var idVeiculo = form.idVeiculo.value,
-                modelo = form.modelo.value
-                marca = form.marca.value
-                cor = form.cor.value
-                desc = form.desc.value;
+            var idVeiculo = form.idVeiculo.value;
+            var modelo = form.modelo.value;
+            var marca = form.marca.value;
+            var cor = form.cor.value;
+            var desc = form.desc.value;
+            
             form.action = "../Controller/editar.php?action=editarVeiculo"
-            + '&&idVeiculo="+idVeiculo'
+            + '&&idVeiculo=' +idVeiculo
             + '&&modelo='+modelo
             + '&&marca='+marca
             + '&&cor='+cor
             + '&&desc='+desc;
+
+            form.submit();
         }
 
         function voltarConsCarro(){
@@ -85,7 +81,7 @@ if (isset($_GET['idVeiculo']) && !empty($_GET['idVeiculo'])){
                             <input type="text" class="input" name="marca_veiculo" id="marca" placeholder="Marca" value="<?php echo isset($_GET['marca']) ? $_GET['marca'] : '' ?>"/>
                         </div>
                         <div class="campo">
-                            <input id="idVeiculo" type="hidden" value="<?php echo isset($_SESSION['idVeiculo']) ? $_SESSION['idVeiculo'] : '' ?>">
+                            <input id="idVeiculo" type="hidden" value="<?php echo isset($_GET['idVeiculo']) ? $_GET['idVeiculo'] : '' ?>">
                             <label for="car" class="preenchimento">Modelo do veiculo</label>
                             <input type="text" class="input" name="modelo_veiculo" id="modelo" placeholder="Modelo" value="<?php echo isset($_GET['modelo']) ? $_GET['modelo'] : '' ?>"/>
                         </div>
