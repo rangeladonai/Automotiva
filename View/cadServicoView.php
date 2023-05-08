@@ -37,11 +37,6 @@ require '../Model/connection.php';
 
 </html>
 
-<?php
-require '../Model/connection.php';
-include_once '../Templates/header.php';
-?>
-
 <body>
     <div class="container-page">
         <div id="fundo_cad">

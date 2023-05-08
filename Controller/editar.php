@@ -14,7 +14,7 @@ function editarVeiculo(){
     $sql = "UPDATE veiculos SET modelo='$modelo', marca='$marca', cor='$cor', descricao='$desc' WHERE id_veiculo = '$idVeiculo'";
     try{
         $mysqli->query($sql);
-        header('Location:../View/consCarroView.php?editado');
+        require '../View/consCarroView.php?editado';
     }catch(Exception $e){
         echo $e->getMessage();
         die();
@@ -31,7 +31,7 @@ function editarMotor(){
     
     try{
         $mysqli->query($sql);
-        header('Location:../View/consMotorView.php?editado');
+        require '../View/consMotorView.php?editado';
     }catch(Exception $e){
         echo $e->getMessage();
         die();
@@ -49,7 +49,7 @@ function editarServico($idServico,$descricao_atividade,$data_os,$periodo,$turma,
     $sql = "UPDATE ordem_servico SET descricao_atividade='$descricao_atividade', data_os='$data_os', periodo='$periodo', turma='$turma' veiculo='$veiculo' responsavel='$responsavel' WHERE id_os='$idServico'";
     try{
         $mysqli->query($sql);
-        header('Location:../View/consServicoView.php?editado'); 
+        require '../View/consServicoView.php?editado';
     }catch(Exception $e){
         echo $e->getMessage();
         die();
