@@ -13,6 +13,15 @@ function deletarVeiculo(idVeiculo) {
 }
 
 
+function editarVeiculo(idVeiculo, marca, modelo, cor, descricao) {
+    var end = '../View/cadCarroView.php?funcao=editar&&idVeiculo=' + idVeiculo
+        + '&&marca=' + marca
+        + '&&modelo=' + modelo
+        + '&&cor=' + cor
+        + '&&descricao=' + descricao;
+    window.location.href = end;
+}
+
 function deletarMotor(idMotor){
     if (idMotor != null){
         if (confirm("DESEJA DELETAR O MOTOR SELECIONADO?") == true){
