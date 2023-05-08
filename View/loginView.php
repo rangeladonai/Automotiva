@@ -1,8 +1,12 @@
 <?php
 session_start();
 require_once '../Templates/header.php';
-unset($_SESSION['nome']);
-unset($_SESSION['is_dev']);
+if (isset($_SESSION['nome'])){
+        unset($_SESSION['nome']);
+}
+if (isset($_SESSION['is_dev'])){
+        unset($_SESSION['is_dev']);
+}
 ?>
 <link rel="stylesheet" href="../Public/CSS/loginView.css">
 <body>
