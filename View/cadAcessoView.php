@@ -1,7 +1,7 @@
 <?php
+session_start();
 require_once '../Templates/header.php';
 require '../Model/connection.php';
-session_start();
 ?>
 
 <!DOCTYPE html>
