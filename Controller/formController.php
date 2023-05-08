@@ -13,15 +13,15 @@ function validaLogin(){
             $_SESSION['nome'] = $row['nome'];
             $_SESSION['is_dev'] = $row['is_dev'];
             if ($row['pin'] == $pin){
-                header('Location:../View/homeView.php');
+                require '../View/homeView.php';
             }
         }else{
-            header('Location:../View/loginView.php?erro=1');
+            require '../View/loginView.php?erro=1';
         }
     }else{
         unset($_SESSION['nome']);
         unset($_POST['pinLogin']);
-        header('Location:./View/loginView.php');
+        require './View/loginView.php';
     }
 }
 
@@ -46,7 +46,7 @@ function cadServico() {
     $veiculoDado = procuraVeiculo($veiculo);
     $sql = "INSERT INTO ordem_servico(data_os, periodo, turma, veiculo, descricao_atividade, responsavel, motor) VALUES('$data', '$turno', '$turma', '$veiculoDado','$descricao' ,'$resp', '$motor')";
     $mysqli->query($sql);
-    header('Location:../View/consServicoView.php');
+    require '../View/consServicoView.php';
 }
 
 function cadAcesso(){
@@ -59,7 +59,7 @@ function cadAcesso(){
     
     try{
         $mysqli->query($sql);
-        header('Location:../View/consAcessoView.php');
+        require '../View/consAcessoView.php';
     } catch(Exception $e){
         echo $e->getMessage();
     }

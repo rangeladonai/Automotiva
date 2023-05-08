@@ -13,7 +13,7 @@ function deletarVeiculo($idVeiculo){
     $sql = "DELETE FROM veiculos WHERE id_veiculo = '$idVeiculo'";
     try{
         $mysqli->query($sql);
-        header('Location:../View/consCarroView.php');
+        require '../View/consCarroView.php';
     }catch(Exception $e){
         echo $e->getMessage();
     }
@@ -29,7 +29,7 @@ function deletarMotor($idMotor){
     $sql = "DELETE FROM motor WHERE id_motor = '$idMotor'";
     try{
         $mysqli->query($sql);
-        header('Location:../View/consMotorView.php');
+        require '../View/consMotorView.php';
     }catch(Exception $e){
         echo $e->getMessage();
     }
@@ -45,7 +45,7 @@ function deletarServico($idServico){
     $sql = "DELETE FROM ordem_servico WHERE id_os = '$idServico'";
     try{
         $mysqli->query($sql);
-        header('Location:../View/consServicoView.php');
+        require '../View/consServicoView.php';
     }catch(Exception $e){
         echo $e->getCode();
     }
@@ -57,7 +57,7 @@ function deleteAcesso(){
     $sql = "DELETE FROM usuariopin WHERE id_userpin = '$id_userpin'";
     try{
         $mysqli->query($sql);
-        header('Location:../View/consAcessoView.php');
+        require '../View/consAcessoView.php';
     }catch(Exception $e){
         $e->getMessage();
     }
