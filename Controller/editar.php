@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../Controller/actionController.php';
 //Veiculo
 

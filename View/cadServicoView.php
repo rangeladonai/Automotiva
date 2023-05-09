@@ -2,6 +2,7 @@
 session_start();
 require_once '../Templates/header.php';
 require '../Model/connection.php';
+
 ?>
 <!DOCTYPE html>
 <!-- Coding by CodingLab | www.codinglabweb.com -->
