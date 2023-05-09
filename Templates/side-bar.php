@@ -1,7 +1,7 @@
 <nav class="sidebar close">
         <header>
             <div>
-                <a href="homeView.php">
+                <a href="../View/homeView.php">
                     <button class="text_senai">
                         <img src="../Public/Imagens/senai_logo.png">
                     </button>
@@ -56,9 +56,9 @@
 
                     <?php if(isset($_SESSION['is_dev']) && $_SESSION['is_dev'] != 0): ?>    
                     <li class="nav-link" title="Cadastro Acesso">
-                        <a href="consAcessoView.php">
-                            <i class='fas fa-key' style='color: red'></i>
-                            <span class="text nav-text">Acessos</span>
+                        <a href="../View/consAcessoView.php">
+                            <i class='fas fa-key' style='color: red; position:relative; left:20px;';></i>
+                            <span class="text nav-text" style="position:relative; left: 42px;">Acessos</span>
                         </a>
                     </li>
                     <?php endif; ?>
