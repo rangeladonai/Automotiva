@@ -1,13 +1,4 @@
 <?php
-/* login para o HOST WEB
-$host = 'localhost';
-$dbname = 'id20653547_radajori';
-$username = 'id20653547_root';
-$psswrd = 'Radajori2023-';
-*/
-
-
-
 $host = 'localhost';
 $dbname = 'radajori';
 $username = 'root';
