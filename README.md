@@ -21,5 +21,5 @@ Projeto desenvolvido em grupo no 4 Semestre do Senai.
   <li>Para parar & desfazer o container do projeto digite <i><b> docker-compose down </b></i> OU <i><b> docker compose down </b></i></li>
 </ul>
 
-# <a href="https://mecanicasenai4semestre.000webhostapp.com/"> Você também pode acessar o Projeto através deste link</a>
+# Acesse o projeto <a href="https://mecanicasenai4semestre.000webhostapp.com/"> clicando aqui</a>
 Para acessar o sistema pelo link acima, utilize o PIN: radajori
