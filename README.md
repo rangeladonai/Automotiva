@@ -1,5 +1,6 @@
 ﻿# MecanicaSenai
-Projeto desenvolvido em grupo no 4 Semestre do Senai.
+Meu primeiro projeto desenvolvido em grupo no 4 Semestre do Senai.
+Código antigo sem qualidade e performace, apenas pensado para a entrega do projeto.
 
 <h2> Como Rodar o projeto XAMPP</h2>
 <ul>
